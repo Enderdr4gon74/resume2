@@ -1,0 +1,21 @@
+{
+  "name": "cw-vue-template",
+  "version": "0.1.2",
+  "private": true,
+  "scripts": {
+    "serve": "vite",
+    "build": "vite build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@mdi/font": "7.0.96",
+    "bootstrap": "5.2.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "3.1.0",
+    "eslint": "8.24.0",
+    "eslint-plugin-import": "2.26.0",
+    "sass": "1.54.5",
+    "vite": "3.1.3"
+  }
+}
