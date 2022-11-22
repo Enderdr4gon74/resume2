@@ -1,4 +1,28 @@
 import { Skill } from "../Models/Skill.js"
+import { Job } from "../Models/Job.js"
+import { Requirement } from "../Models/Requirement.js"
+
+
+export let showSkills = false
+
+export function enableShowSkillsBool() {
+  showSkills = true
+}
+
+export function disableShowSkillsBool() {
+  showSkills = false
+}
+
+export let showJobs = false
+
+export function enableShowJobsBool() {
+  showJobs = true
+}
+
+export function disableShowJobsBool() {
+  showJobs = false
+}
+
 
 export const skills = [
   new Skill({
@@ -123,7 +147,7 @@ export const skills = [
   }),
   new Skill({
     Name: "MVC File Flow Structure",
-    Description: "MVC is a file structure that organizes functions into: View - What the user sees, Controller - where the functions that any interactable button or item might activate, Service - where all the business logic for each function lays, AppState - where all the current data lays, Models - where the formats of data lay",
+    Description: "MVC is a file structure that organizes functions into: View - What the user sees, \nController - where the functions that any interactable button or item might activate, \nService - where all the business logic for each function lays, \nAppState - where all the current data lays, \nModels - where the formats of data lay",
     Icons: []
   }),
   new Skill({
@@ -206,6 +230,128 @@ export const skills = [
         Link: "https://www.mysql.com/",
         Title: "My SQL",
       },
+    ]
+  }),
+]
+
+export const workExperience = [
+  new Job({
+    Company: "Bretz Rv",
+    Location: "Boise ID",
+    To: "July 30th, 2022",
+    From: "April 4th, 2022",
+    JobTitle: "Propane Attendant",
+    Requirements: []
+  }),
+  new Job({
+    Company: "Autozone",
+    Location: "Kuna ID",
+    To: "April 2nd, 2022",
+    From: "April 2021",
+    JobTitle: "Sales Associate",
+    Requirements: [
+      new Requirement({
+        Name: "Provide WOW! Customer Service."
+      }),
+      new Requirement({
+        Name: "Ensure assigned store tasks are completed promptly on the assigned shift."
+      }),
+      new Requirement({
+        Name: "Utilize ZNET to help customers locate merchandise or find suitable alternatives."
+      }),
+      new Requirement({
+        Name: "Follow company policies and loss prevention procedures."
+      }),
+      new Requirement({
+        Name: "Maintain a safe working environment including PPE (Personal Protective Equipment)."
+      }),
+      new Requirement({
+        Name: "Ability to diagnose automobile problems and recommend solutions."
+      }),
+      new Requirement({
+        Name: "Maintain store appearance and merchandising standards as directed."
+      }),
+      new Requirement({
+        Name: "Ensure that merchandise is restocked and placed in their respective areas."
+      }),
+      new Requirement({
+        Name: "Maintain product knowledge and current promotions through AutoZone systems and information sources."
+      }),
+      new Requirement({
+        Name: "Provide honest and trustworthy advice to customers regarding the best products that fit the customers' expectations."
+      }),
+      new Requirement({
+        Name: "Practice GOTTChA and assists with the installation of wipers blades, batteries, and light bulbs."
+      }),
+      new Requirement({
+        Name: "Utilize OBDII to read codes from customer's automobile."
+      }),
+      new Requirement({
+        Name: "Operate cash registers and follow established cash handling procedures."
+      }),
+      new Requirement({
+        Name: "Communicate with managers regarding customer concerns and employee matters."
+      }),
+      new Requirement({
+        Name: "Actively engaged in developing more effective customer service skills."
+      }),
+    ]
+  }),
+  new Job({
+    Company: "Wendy's",
+    Location: "Kuna ID",
+    To: "Feb 2021",
+    From: " June 2020",
+    JobTitle: "Crewmate",
+    Requirements: [
+      new Requirement({
+        Name: "Assemble food orders while maintaining appropriate portion control."
+      }),
+      new Requirement({
+        Name: "Retrieves raw food stock and place at the appropriate station for preparation."
+      }),
+      new Requirement({
+        Name: "Performs duties to prepare food."
+      }),
+      new Requirement({
+        Name: "Operated fry station for drive-thru and dining room."
+      }),
+      new Requirement({
+        Name: "Cleaned & sanitized food preparation dishes, devices, and materials."
+      }),
+      new Requirement({
+        Name: "Performed closing procedures."
+      }),
+    ]
+  }),
+  new Job({
+    Company: "Subway",
+    Location: "Kuna ID",
+    To: "August 2020",
+    From: "June 2020",
+    JobTitle: "Sandwich Artist",
+    Requirements: [
+      new Requirement({
+        Name: "Created custom sandwiches as ordered."
+      }),
+      new Requirement({
+        Name: "Maintained excellent customer service during fast-paced lunch and dinner rushes."
+      }),
+      new Requirement({
+        Name: "Cleaned, sanitized, and organized dining room area to maintain a comfortable and clean environment."
+      }),
+      new Requirement({
+        Name: "Processed customer payments via POS register, including accurate cash handling and credit card transactions."
+      }),
+      new Requirement({
+        Name: "Cleaned & sanitized food preparation dishes, devices, and materials."
+      }),
+      new Requirement({
+        Name: "Prepared food & materials to be used for sandwich creations."
+      }),
+      new Requirement({
+        Name: "Performed closing procedures."
+      }),
     ]
   }),
 ]

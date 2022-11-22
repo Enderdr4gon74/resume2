@@ -10,11 +10,14 @@
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Permanent+Marker&family=Playball&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Permanent+Marker&family=Playball&display=swap"
+    rel="stylesheet">
 
   <!-- Bootstrap CSS v5.2.1 -->
   <link rel="stylesheet" href="style.css">
-  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
 
   <!-- MDI link -->
   <link rel="stylesheet" href="//cdn.materialdesignicons.com/6.9.96/css/materialdesignicons.min.css">
@@ -47,9 +50,12 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <h2 class="m-0 font-name">Tristan Cox</h2>
                   <div class="d-flex gap-2">
-                    <h4 class="m-0 fs-spec" title="Email Me"><a href="mailto: tristancox03@gmail.com" target="_blank"><i class="mdi mdi-email text-dark"></i></a></h4>
-                    <h4 class="m-0 fs-spec" title="My Github"><a href="https://github.com/Enderdr4gon74" target="_blank"><i class="mdi mdi-github text-dark"></i></a></h4>
-                    <h4 class="m-0 fs-spec" title="My LinkedIn"><a href="https://www.linkedin.com/in/tristancox03/" target="_blank"><i class="mdi mdi-linkedin text-dark"></i></a></h4>
+                    <h4 class="m-0 fs-spec" title="Email Me"><a href="mailto: tristancox03@gmail.com" target="_blank"><i
+                          class="mdi mdi-email text-dark"></i></a></h4>
+                    <h4 class="m-0 fs-spec" title="My Github"><a href="https://github.com/Enderdr4gon74"
+                        target="_blank"><i class="mdi mdi-github text-dark"></i></a></h4>
+                    <h4 class="m-0 fs-spec" title="My LinkedIn"><a href="https://www.linkedin.com/in/tristancox03/"
+                        target="_blank"><i class="mdi mdi-linkedin text-dark"></i></a></h4>
                   </div>
                 </div>
               </div>
@@ -57,7 +63,10 @@
                 <h3>Junior Full Stack Web Developer</h3>
               </div>
               <div class="col-12">
-                <p class="font-info">I am a Junior Full Stack Web Developer who just graduated from Boise CodeWorks, a web development BootCamp. I am skilled in HTML5, CSS, Javascript, C#, SQL, Java, and Python. I have experience in using Vue.js, Node.js, and DotNet frameworks and I can also use MongoDB and MySQL databases. I also have multiple years of experience in sales and customer service.</p>
+                <p class="font-info">I am a Junior Full Stack Web Developer who just graduated from Boise CodeWorks, a
+                  web development BootCamp. I am skilled in HTML5, CSS, Javascript, C#, SQL, Java, and Python. I have
+                  experience in using Vue.js, Node.js, and DotNet frameworks and I can also use MongoDB and MySQL
+                  databases. I also have multiple years of experience in sales and customer service.</p>
               </div>
             </section>
           </div>
@@ -66,25 +75,52 @@
     </section>
     <section class="row bg-light">
       <div class="col-12">
-        <h2 class="m-2">Skills</h2>
-        <section class="bricks" id="skills"> <!--  -->
-          <!-- <div class="col-4 spec-card-2 p-2">
-            <h3 class="m-0">Title</h3>
-            <p class="ps-1 mb-1">description</p>
-            <section class="row">
-              <div class="col-3">
-                <a href="https://thiscatdoesnotexist.com">
-                  <img src="https://thiscatdoesnotexist.com" alt="Random cat" title="Random cat" class="img-fluid w-100  rounded-3">
-                </a>
-              </div>
-            </section>
+        <button class="btn btn-outline-dark border-0 m-2 rounded-3 py-2 px-3" onclick="toggleShowSkills()">
+          <h2 class="m-0">Skills</h2>
+        </button>
+        <section class="bricks" id="skills"></section>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-outline-dark border-0 m-2 rounded-3 py-2 px-3" onclick="toggleShowJobs()">
+          <h2 class="m-0">Job Experience</h2>
+        </button>
+        <section class="bricks" id="jobs">
+          <!-- <div class="brick py-2 px-1">
+            <div class="spec-card-2 p-2">
+              <h3 class="mb-1">Subway - Sandwich Artist</h3>
+              <p class="mb-0">June 2020 - August 2020</p>
+              <p class="mb-1">Kuna ID</p>
+              <h4>Requirements: </h4>
+              <ul>
+                <li>
+                  <p class="m-0">Create custom sandwiches as ordered</p>
+                </li>
+              </ul>
+            </div>
           </div> -->
         </section>
+        <!-- <section class="bricks" id="skills"></section> -->
       </div>
     </section>
   </main>
 
-  <script type="module" src="./JS/Drawer.js"></script>
+  <!-- <script type="module" src="./JS/Drawer.js"></script>
+  <script type="module" src="./JS/Handler.js"></script> -->
+  <script type="module">
+    import { toggleShowSkills } from "./JS/Handler.js"
+    import { toggleShowJobs } from "./JS/Handler.js"
+
+    window.toggleShowSkills = toggleShowSkills;
+    window.toggleShowJobs = toggleShowJobs;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
