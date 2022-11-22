@@ -57,6 +57,16 @@
   }
 }
 
+.bricks-2 {
+  columns: 2;
+}
+
+@media screen AND (max-width: 1080px) {
+  .bricks-2 {
+    columns: 1 !important;
+  }
+}
+
 .brick {
   page-break-inside: avoid;
 }
