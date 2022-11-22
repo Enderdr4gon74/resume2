@@ -45,32 +45,30 @@
   columns: 3;
 }
 
-@media screen AND (max-width: 960px) {
-  .bricks {
-    columns: 1 !important;
-  }
-}
-
-@media screen AND (max-width: 1200px) AND (min-width: 961px) {
-  .bricks {
-    columns: 2;
-  }
-}
-
-.bricks-2 {
-  columns: 2;
-}
-
-@media screen AND (max-width: 1080px) {
-  .bricks-2 {
-    columns: 1 !important;
-  }
-}
-
 .brick {
   page-break-inside: avoid;
 }
 
 .selectable:hover {
   background-color: #9b989834;
+}
+
+.bricks-2 {
+  columns: 2;
+}
+
+@media screen AND (max-width: 960px) {
+  .bricks {
+    columns: 1 !important;
+  }
+  
+    .bricks-2 {
+      columns: 1 !important;
+    }
+}
+
+@media screen AND (max-width: 1200px) AND (min-width: 961px) {
+  .bricks {
+    columns: 2;
+  }
 }
