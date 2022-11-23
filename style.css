@@ -63,6 +63,17 @@
   columns: 2;
 }
 
+.spec-height {
+  min-height: 100vh;
+}
+
+.spec-img {
+  max-height: 15rem;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  object-position: center;
+}
+
 @media screen AND (max-width: 960px) {
   .bricks {
     columns: 1 !important;

@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="//cdn.materialdesignicons.com/6.9.96/css/materialdesignicons.min.css">
 </head>
 
-<body>
+<body class="position-relative spec-height overflow-auto">
   <!-- <header class="container-fluid p-3">
     <section class="row">
       <div class="col-4">
@@ -92,7 +92,7 @@
           onclick="toggleShowJobs()">
           <h2 class="m-0">Job Experience</h2>
         </button>
-        <section class="bricks-2" id="jobs"></section>
+        <section class="row" id="jobs"></section>
       </div>
       <!-- Schools -->
       <div class="col-12">
@@ -103,8 +103,34 @@
         </button>
         <section class="row" id="schools"></section>
       </div>
+      <!-- Achievements -->
+      <div class="col-12">
+        <button
+          class="btn btn-outline-dark border-0 m-2 rounded-3 py-2 px-3 dropdown-toggle d-flex align-items-center gap-2"
+          onclick="toggleShowAchievements()">
+          <h2 class="m-0">Achievements</h2>
+        </button>
+        <section class="row" id="achievements">
+          <!-- <div class="col-12 col-md-6">
+            <div class="spec-card-2 p-2">
+              <div class="px-5">
+                <img src="https://imgs.search.brave.com/kAzHBhDlByq2QJdDBjNeENgBDG6Rbh2n8q4NjvZAw6A/rs:fit:1200:1170:1/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi80LzQ4L0Fk/b2JlX0luRGVzaWdu/X0NDX2ljb24uc3Zn/LzEyMDBweC1BZG9i/ZV9JbkRlc2lnbl9D/Q19pY29uLnN2Zy5w/bmc" alt="" class="img-fluid w-100 spec-img">
+              </div>
+              <h3 class="mb-1">Adobe Certified Associate - Adobe Photoshop CC 2018</h3>
+              <p class="mb-1 ps-1">Dec 2018 - Nov-2022</p>
+            </div>
+          </div> -->
+        </section>
+      </div>
     </section>
   </main>
+  <div class="d-flex justify-content-end align-items-center position-absolute bottom-0 end-0">
+    <div class="pb-2 pe-2">
+      <a href="https://github.com/Enderdr4gon74/resume2" target="_blank" class="btn btn-dark rounded-circle" title="This GitHub Project">
+        <i class="mdi mdi-github fs-4"></i>
+      </a>
+    </div>
+  </div>
 
   <!-- <script type="module" src="./JS/Drawer.js"></script>
   <script type="module" src="./JS/Handler.js"></script> -->
@@ -112,10 +138,12 @@
     import { toggleShowSkills } from "./JS/Handler.js"
     import { toggleShowJobs } from "./JS/Handler.js"
     import { toggleShowSchools } from "./JS/Handler.js"
+    import { toggleShowAchievements } from "./JS/Handler.js"
 
     window.toggleShowSkills = toggleShowSkills;
     window.toggleShowJobs = toggleShowJobs;
     window.toggleShowSchools = toggleShowSchools;
+    window.toggleShowAchievements = toggleShowAchievements;
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

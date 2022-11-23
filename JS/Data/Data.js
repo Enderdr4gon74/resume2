@@ -35,6 +35,16 @@ export function disableShowSchoolsBool() {
   showSchools = false
 }
 
+export let showAchievements = false
+
+export function enableShowAchievementsBool() {
+  showAchievements = true
+}
+
+export function disableShowAchievementsBool() {
+  showAchievements = false
+}
+
 export const skills = [
   new Skill({
     Name: "Google Suite",
@@ -265,6 +275,24 @@ export const workExperience = [
     ]
   }),
   new Job({
+    Company: "Autozone",
+    Location: "Kuna ID",
+    To: "April 2nd, 2022",
+    From: "April 2021",
+    JobTitle: "Sales Associate",
+    Requirements: [
+      new Requirement({
+        Name: "Assist customers with finding, purchasing, and researching parts using Znet (Autozone part management software)."
+      }),
+      new Requirement({
+        Name: "Manage store by stocking and organizing shelves, maintaining store tasks, and cleaning the storefront every day."
+      }),
+      new Requirement({
+        Name: "Go to the customer's vehicle to assist with OBD II codes and replacing wiper blades, batteries, or headlights."
+      })
+    ]
+  }),
+  new Job({
     Company: "Wendy's",
     Location: "Kuna ID",
     To: "Feb 2021",
@@ -289,24 +317,6 @@ export const workExperience = [
       // new Requirement({
       //   Name: "Performed closing procedures."
       // }),
-    ]
-  }),
-  new Job({
-    Company: "Autozone",
-    Location: "Kuna ID",
-    To: "April 2nd, 2022",
-    From: "April 2021",
-    JobTitle: "Sales Associate",
-    Requirements: [
-      new Requirement({
-        Name: "Assist customers with finding, purchasing, and researching parts using Znet (Autozone part management software)."
-      }),
-      new Requirement({
-        Name: "Manage store by stocking and organizing shelves, maintaining store tasks, and cleaning the storefront every day."
-      }),
-      new Requirement({
-        Name: "Go to the customer's vehicle to assist with OBD II codes and replacing wiper blades, batteries, or headlights."
-      })
     ]
   }),
   new Job({
@@ -348,7 +358,11 @@ export const schools = [
     Picture: "https://imgs.search.brave.com/p8t3pILNoZkEJIIrXhbgBdoVzLvihPsAgSmzQrGT5q4/rs:fit:1200:796:1/g:ce/aHR0cHM6Ly9ibG94/aW1hZ2VzLmNoaWNh/Z28yLnZpcC50b3du/bmV3cy5jb20vaWRh/aG9wcmVzcy5jb20v/Y29udGVudC90bmNt/cy9hc3NldHMvdjMv/ZWRpdG9yaWFsLzEv/ZjIvMWYyNDJjZTkt/YjE3NS01ZWQ1LWE1/NTItOGNkNzY1OTgy/ZTk0LzVmNTk3MDA2/YTAxYjAuaW1hZ2Uu/anBnP3Jlc2l6ZT0x/MjAwJTJDNzk2",
     Location: "Kuna, Idaho",
     Link: "https://www.kunaschools.org/kunahigh",
-    Description: "Learned wide variety of topics covering the basics of required topics needed in a work environment."
+    Description: [
+      "Intro to Computer Systems",
+      "Dual Credit Programming Fundamentals",
+      "Computer Science Principles"
+    ]
   }),
   new School({
     Name: "Boise CodeWorks",
@@ -356,33 +370,41 @@ export const schools = [
     Picture: "https://imgs.search.brave.com/oB5oWKQwWj01VwxskKVLBFJikYcgl4f3zAIapNGQxfY/rs:fit:500:500:1/g:ce/aHR0cHM6Ly9pZGFo/b3BvdGF0b2Ryb3Au/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE2LzA5L2N3LWxv/Z28ucG5n",
     Location: "Boise, Idaho",
     Link: "https://boisecodeworks.com/",
-    Description: "Primarily learned full stack web development including front-end (client) and back-end (server / database)"
+    Description: [
+      "Certificate of Completion - Boise CodeWorks"
+    ]
   })
 ]
 
 export const achievements = [
   new Achievement({
     Name: "Adobe Certified Associate - Adobe Photoshop CC 2018",
-    Date: "Dec 2018 - Nov-2022"
+    Date: "Dec 2018 - Nov-2022",
+    Img: "https://imgs.search.brave.com/oDpPJRp4AbeQLpa_Vmjg1KOfEQuwQpyfU9dicgnhJko/rs:fit:1200:1170:1/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9hL2FmL0Fk/b2JlX1Bob3Rvc2hv/cF9DQ19pY29uLnN2/Zy8xMjAwcHgtQWRv/YmVfUGhvdG9zaG9w/X0NDX2ljb24uc3Zn/LnBuZw"
   }),
   new Achievement({
     Name: "Graphic Design & Illustration using Adobe Illustrator CC 2018",
-    Date: "Nov 2020 - Nov 2023"
+    Date: "Nov 2020 - Nov 2023",
+    Img: "https://imgs.search.brave.com/rdP-mZPAIySXYMR3amKYoy9V2Wo6qT7hPWoCr0kEplQ/rs:fit:1200:1170:1/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9mL2ZiL0Fk/b2JlX0lsbHVzdHJh/dG9yX0NDX2ljb24u/c3ZnLzEyMDBweC1B/ZG9iZV9JbGx1c3Ry/YXRvcl9DQ19pY29u/LnN2Zy5wbmc"
   }),
   new Achievement({
     Name: "Print & Digital Media Publication using Adobe InDesign CC 2018",
-    Date: "May 2021 - May 2024"
+    Date: "May 2021 - May 2024",
+    Img: "https://imgs.search.brave.com/kAzHBhDlByq2QJdDBjNeENgBDG6Rbh2n8q4NjvZAw6A/rs:fit:1200:1170:1/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi80LzQ4L0Fk/b2JlX0luRGVzaWdu/X0NDX2ljb24uc3Zn/LzEyMDBweC1BZG9i/ZV9JbkRlc2lnbl9D/Q19pY29uLnN2Zy5w/bmc"
   }),
   new Achievement({
     Name: "Adobe Certified Professional: Visual Design",
-    Date: "2021"
+    Date: "2021",
+    Img: "https://imgs.search.brave.com/6t7tmn8gjQwlBhWm4guUF9asMl_YKY1EiU0qgYSKHK4/rs:fit:892:271:1/g:ce/aHR0cHM6Ly9oZWxw/eC5hZG9iZS5jb20v/Y29udGVudC9kYW0v/aGVscC9lbi94LXBy/b2R1Y3RrYi9tdWx0/aS9hZG9iZS1jZXJ0/aWZpZWQtcHJvZmVz/c2lvbmFsL2pjcl9j/b250ZW50L21haW4t/cGFycy9tdWx0aV9j/b2x1bW4vY29sLTUw/LTUwLWMxL2ltYWdl/L0FDUF9sb2dvLnBu/Zw"
   }),
   new Achievement({
     Name: "Introduction to Programming using Java",
-    Date: "May 2021"
+    Date: "May 2021",
+    Img: "https://imgs.search.brave.com/6SO0L0R5fDplXMzgdYiL1GNrcCeupt_LHr7PG4x-pNI/rs:fit:1200:731:1/g:ce/aHR0cDovL3d3MS5w/cndlYi5jb20vcHJm/aWxlcy8yMDEyLzAx/LzE5LzkxMjE1NzUv/bXMtVGVjaEFzc29j/aWF0ZV9ibHVlLnBu/Zw"
   }),
   new Achievement({
     Name: "Certificate of Completion - Boise CodeWorks",
-    Date: "Nov 2022"
+    Date: "Nov 2022",
+    Img: "https://imgs.search.brave.com/-qnfL4yShaeHBeAsB59UmB1GSJgqrK5aATPBG0bf47Y/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9iY3cu/YmxvYi5jb3JlLndp/bmRvd3MubmV0L3B1/YmxpYy9pbWcvODYw/MDg1NjM3MzE1MjQ2/Mw"
   }),
 ]

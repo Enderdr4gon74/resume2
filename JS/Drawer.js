@@ -1,5 +1,6 @@
-import { disableShowJobsBool, disableShowSchoolsBool, disableShowSkillsBool, enableShowJobsBool, enableShowSchoolsBool, enableShowSkillsBool, schools, showJobs, showSchools, showSkills, skills, workExperience } from "../JS/Data/Data.js";
+import { achievements, disableShowAchievementsBool, disableShowJobsBool, disableShowSchoolsBool, disableShowSkillsBool, enableShowAchievementsBool, enableShowJobsBool, enableShowSchoolsBool, enableShowSkillsBool, schools, showAchievements, showJobs, showSchools, showSkills, skills, workExperience } from "../JS/Data/Data.js";
 import { Skill } from "../JS/Models/Skill.js";
+import { Achievement } from "./Models/Achievement.js";
 import { Icon } from "./Models/Icon.js";
 import { Job } from "./Models/Job.js";
 import { Requirement } from "./Models/Requirement.js";
@@ -10,7 +11,6 @@ function drawSkills(skillList = []) {
   skillList.forEach((skill = Skill)=>{
     html += formatSkill(skill)
   })
-  // console.log(html)
   // @ts-ignore
   document.getElementById("skills").innerHTML = html
   enableShowSkillsBool()
@@ -27,13 +27,23 @@ function drawJobExperience(jobList = []) {
 }
 
 function drawSchools(schoolList = []) {
-  let html  = ""
+  let html = ""
   schoolList.forEach((school = School) => {
     html += formatSchool(school)
   })
   // @ts-ignore
   document.getElementById("schools").innerHTML = html
   enableShowSchoolsBool()
+}
+
+function drawAchievements(achievementList = []) {
+  let html = ""
+  achievementList.forEach((achievement = Achievement) => {
+    html += formatAchievement(achievement)
+  })
+  // @ts-ignore
+  document.getElementById("achievements").innerHTML = html
+  enableShowAchievementsBool()
 }
 
 function unDrawSkills() {
@@ -52,6 +62,12 @@ function unDrawSchools() {
   // @ts-ignore
   document.getElementById("schools").innerHTML = ""
   disableShowSchoolsBool()
+}
+
+function unDrawAchievements() {
+  // @ts-ignore
+  document.getElementById("achievements").innerHTML = ""
+  disableShowAchievementsBool()
 }
 
 function formatSkill(s) {
@@ -81,14 +97,13 @@ function formatSkill(s) {
   html += 
     `\t</div>\n` + 
     `</div>\n`
-  // console.log(html)
   return html
 }
 
 function formatJob(j) {
   let job = new Job(j)
   let html = 
-    `<div class="brick py-2 px-1">\n` +
+    `<div class="col-12 col-md-6 mb-3">\n` +
     `\t<div class="spec-card-2 p-2">\n` +
     `\t\t<h3 class="mb-1">${job.Company} - ${job.JobTitle}</h3>\n` +
     `\t\t<p class="mb-0">${job.From} - ${job.To}</p>\n` +
@@ -116,7 +131,7 @@ function formatJob(j) {
 function formatSchool(s) {
   let school = new School(s)
   let html = 
-    `<div class="col-12 col-md-6">\n` +
+    `<div class="col-12 col-md-6 mb-3">\n` +
     `\t<section class="row spec-card-2 p-2 mx-0">\n` +
     `\t\t<div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0">\n` + 
     `\t\t\t<a href="${school.Link}" target="_blank">\n` + 
@@ -125,12 +140,40 @@ function formatSchool(s) {
     `\t\t</div>\n` +
     `\t\t<div class="col-12 col-md-8">\n` +
     `\t\t\t<h3 class="mb-1">${school.Name}</h3>\n` +
-    `\t\t\t<p class="m-0">${school.Location} | Class of ${school.Class}</p>\n` +
-    `\t\t\t<p class="m-0">${school.Description}</p>\n` +
+    `\t\t\t<p class="m-0">${school.Location} | Class of ${school.Class}</p>\n`
+  if (school.Description.length > 0) {
+    html += 
+      `\t\t\t<ul>\n`
+    school.Description.forEach((d) => {
+      html += 
+        `\t\t\t\t<li>\n`+
+        `\t\t\t\t\t<p class="m-0">${d}</p>\n` + 
+        `\t\t\t\t</li>\n`
+    })
+    html += 
+      `\t\t\t</ul>\n`
+  }
+    // `\t\t\t<p class="m-0">${school.Description}</p>\n`
+  html += 
     `\t\t</div>\n` +
     `\t</section>\n` +
     `</div>`
     return html
+}
+
+function formatAchievement(a) {
+  let achievement = new Achievement(a)
+  let html = 
+    `<div class="col-12 col-md-6 mb-3">\n` + 
+    `\t<div class="spec-card-2 p-2">\n` + 
+    `\t\t<div class="px-5">\n` + 
+    `\t\t\t<img src="${achievement.Img}" alt="" class="img-fluid w-100 spec-img">\n` + 
+    `\t\t</div>\n` + 
+    `\t\t<h3 class="mb-1">${achievement.Name}</h3>\n` + 
+    `\t\t<p class="mb-1 ps-1">${achievement.Date}</p>\n` + 
+    `\t</div>\n` + 
+    `</div>\n`
+  return html
 }
 
 export function toggleShowSkills2() {
@@ -141,7 +184,6 @@ export function toggleShowSkills2() {
   } else {
     unDrawSkills()
   }
-  // toggleShowSkillsBool()
 }
 
 export function toggleShowJobs2() {
@@ -149,10 +191,10 @@ export function toggleShowJobs2() {
     drawJobExperience(workExperience)
     unDrawSkills()
     unDrawSchools()
+    unDrawAchievements()
   } else {
     unDrawJobs()
   }
-  // toggleShowJobsBool()
 }
 
 export function toggleShowSchools2() {
@@ -160,7 +202,19 @@ export function toggleShowSchools2() {
     drawSchools(schools)
     unDrawJobs()
     unDrawSkills()
+    unDrawAchievements()
   } else {
     unDrawSchools()
+  }
+}
+
+export function toggleShowAchievements2() {
+  if (!showAchievements) {
+    drawAchievements(achievements)
+    unDrawJobs()
+    unDrawSchools()
+    unDrawSkills()
+  } else {
+    unDrawAchievements()
   }
 }
