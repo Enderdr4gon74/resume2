@@ -1,8 +1,9 @@
-import { disableShowJobsBool, disableShowSkillsBool, enableShowJobsBool, enableShowSkillsBool, showJobs, showSkills, skills, workExperience } from "../JS/Data/Data.js";
+import { disableShowJobsBool, disableShowSchoolsBool, disableShowSkillsBool, enableShowJobsBool, enableShowSchoolsBool, enableShowSkillsBool, schools, showJobs, showSchools, showSkills, skills, workExperience } from "../JS/Data/Data.js";
 import { Skill } from "../JS/Models/Skill.js";
 import { Icon } from "./Models/Icon.js";
 import { Job } from "./Models/Job.js";
 import { Requirement } from "./Models/Requirement.js";
+import { School } from "./Models/School.js";
 
 function drawSkills(skillList = []) {
   let html = ""
@@ -25,6 +26,16 @@ function drawJobExperience(jobList = []) {
   enableShowJobsBool()
 }
 
+function drawSchools(schoolList = []) {
+  let html  = ""
+  schoolList.forEach((school = School) => {
+    html += formatSchool(school)
+  })
+  // @ts-ignore
+  document.getElementById("schools").innerHTML = html
+  enableShowSchoolsBool()
+}
+
 function unDrawSkills() {
   // @ts-ignore
   document.getElementById("skills").innerHTML = ""
@@ -35,6 +46,12 @@ function unDrawJobs() {
   // @ts-ignore
   document.getElementById("jobs").innerHTML = ""
   disableShowJobsBool()
+}
+
+function unDrawSchools() {
+  // @ts-ignore
+  document.getElementById("schools").innerHTML = ""
+  disableShowSchoolsBool()
 }
 
 function formatSkill(s) {
@@ -78,7 +95,7 @@ function formatJob(j) {
     `\t\t<p class="mb-1">${job.Location}</p>\n`
   if (job.Requirements.length > 0) {
     html += 
-    `\t\t<h4>Requirements: </h4>\n` + 
+    `\t\t<h4>Duties: </h4>\n` + 
     `\t\t<ul>\n`
     job.Requirements.forEach((r) => {
       let requirement = new Requirement(r)
@@ -96,10 +113,31 @@ function formatJob(j) {
   return html
 }
 
+function formatSchool(s) {
+  let school = new School(s)
+  let html = 
+    `<div class="col-12 col-md-6">\n` +
+    `\t<section class="row spec-card-2 p-2 mx-0">\n` +
+    `\t\t<div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0">\n` + 
+    `\t\t\t<a href="${school.Link}" target="_blank">\n` + 
+    `\t\t\t\t<img src="${school.Picture}" alt="${school.Name}" title="${school.Name}" class="img-fluid w-100 spec-image">\n` +
+    `\t\t\t</a>\n` +
+    `\t\t</div>\n` +
+    `\t\t<div class="col-12 col-md-8">\n` +
+    `\t\t\t<h3 class="mb-1">${school.Name}</h3>\n` +
+    `\t\t\t<p class="m-0">${school.Location} | Class of ${school.Class}</p>\n` +
+    `\t\t\t<p class="m-0">${school.Description}</p>\n` +
+    `\t\t</div>\n` +
+    `\t</section>\n` +
+    `</div>`
+    return html
+}
+
 export function toggleShowSkills2() {
   if (!showSkills) {
     drawSkills(skills)
     unDrawJobs()
+    unDrawSchools()
   } else {
     unDrawSkills()
   }
@@ -110,8 +148,19 @@ export function toggleShowJobs2() {
   if (!showJobs) {
     drawJobExperience(workExperience)
     unDrawSkills()
+    unDrawSchools()
   } else {
     unDrawJobs()
   }
   // toggleShowJobsBool()
+}
+
+export function toggleShowSchools2() {
+  if (!showSchools) {
+    drawSchools(schools)
+    unDrawJobs()
+    unDrawSkills()
+  } else {
+    unDrawSchools()
+  }
 }

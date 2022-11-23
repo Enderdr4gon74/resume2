@@ -75,20 +75,33 @@
       </div>
     </section>
     <!-- more -->
-    <section class="row bg-light">
+    <section class="row bg-light pb-3">
       <!-- Skills -->
       <div class="col-12">
-        <button class="btn btn-outline-dark border-0 m-2 rounded-3 py-2 px-3 dropdown-toggle d-flex align-items-center gap-2" onclick="toggleShowSkills()">
+        <button
+          class="btn btn-outline-dark border-0 m-2 rounded-3 py-2 px-3 dropdown-toggle d-flex align-items-center gap-2"
+          onclick="toggleShowSkills()">
           <h2 class="m-0">Skills</h2>
         </button>
         <section class="bricks" id="skills"></section>
       </div>
       <!-- Jobs -->
       <div class="col-12">
-        <button class="btn btn-outline-dark border-0 m-2 rounded-3 py-2 px-3 dropdown-toggle d-flex align-items-center gap-2" onclick="toggleShowJobs()">
+        <button
+          class="btn btn-outline-dark border-0 m-2 rounded-3 py-2 px-3 dropdown-toggle d-flex align-items-center gap-2"
+          onclick="toggleShowJobs()">
           <h2 class="m-0">Job Experience</h2>
         </button>
         <section class="bricks-2" id="jobs"></section>
+      </div>
+      <!-- Schools -->
+      <div class="col-12">
+        <button
+          class="btn btn-outline-dark border-0 m-2 rounded-3 py-2 px-3 dropdown-toggle d-flex align-items-center gap-2"
+          onclick="toggleShowSchools()">
+          <h2 class="m-0">Education</h2>
+        </button>
+        <section class="row" id="schools"></section>
       </div>
     </section>
   </main>
@@ -98,9 +111,11 @@
   <script type="module">
     import { toggleShowSkills } from "./JS/Handler.js"
     import { toggleShowJobs } from "./JS/Handler.js"
+    import { toggleShowSchools } from "./JS/Handler.js"
 
     window.toggleShowSkills = toggleShowSkills;
     window.toggleShowJobs = toggleShowJobs;
+    window.toggleShowSchools = toggleShowSchools;
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

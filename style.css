@@ -25,6 +25,12 @@
   max-height: 50vh;
 }
 
+.spec-image {
+  border-radius: 0.8rem;
+  object-fit: cover;
+  object-position: center;
+}
+
 .font-name {
   font-family: 'Permanent Marker', cursive;
 }

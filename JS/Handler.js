@@ -1,4 +1,4 @@
-import { toggleShowJobs2, toggleShowSkills2 } from "./Drawer.js";
+import { toggleShowJobs2, toggleShowSchools2, toggleShowSkills2 } from "./Drawer.js";
 
 export function toggleShowSkills() {
   toggleShowSkills2()
@@ -6,4 +6,8 @@ export function toggleShowSkills() {
 
 export function toggleShowJobs() {
   toggleShowJobs2()
+}
+
+export function toggleShowSchools() {
+  toggleShowSchools2()
 }

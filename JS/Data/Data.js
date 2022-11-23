@@ -1,6 +1,8 @@
 import { Skill } from "../Models/Skill.js"
 import { Job } from "../Models/Job.js"
 import { Requirement } from "../Models/Requirement.js"
+import { Achievement } from "../Models/Achievement.js"
+import { School } from "../Models/School.js"
 
 
 export let showSkills = false
@@ -23,6 +25,15 @@ export function disableShowJobsBool() {
   showJobs = false
 }
 
+export let showSchools = false
+
+export function enableShowSchoolsBool() {
+  showSchools = true
+}
+
+export function disableShowSchoolsBool() {
+  showSchools = false
+}
 
 export const skills = [
   new Skill({
@@ -241,60 +252,16 @@ export const workExperience = [
     To: "July 30th, 2022",
     From: "April 4th, 2022",
     JobTitle: "Propane Attendant",
-    Requirements: []
-  }),
-  new Job({
-    Company: "Autozone",
-    Location: "Kuna ID",
-    To: "April 2nd, 2022",
-    From: "April 2021",
-    JobTitle: "Sales Associate",
     Requirements: [
       new Requirement({
-        Name: "Provide WOW! Customer Service."
+        Name: "Serve customers by filling propane canisters when requested."
       }),
       new Requirement({
-        Name: "Ensure assigned store tasks are completed promptly on the assigned shift."
+        Name: "Manage warranty parts by adding, mailing, disposing, and inspecting the parts based on what the vendor required."
       }),
       new Requirement({
-        Name: "Utilize ZNET to help customers locate merchandise or find suitable alternatives."
-      }),
-      new Requirement({
-        Name: "Follow company policies and loss prevention procedures."
-      }),
-      new Requirement({
-        Name: "Maintain a safe working environment including PPE (Personal Protective Equipment)."
-      }),
-      new Requirement({
-        Name: "Ability to diagnose automobile problems and recommend solutions."
-      }),
-      new Requirement({
-        Name: "Maintain store appearance and merchandising standards as directed."
-      }),
-      new Requirement({
-        Name: "Ensure that merchandise is restocked and placed in their respective areas."
-      }),
-      new Requirement({
-        Name: "Maintain product knowledge and current promotions through AutoZone systems and information sources."
-      }),
-      new Requirement({
-        Name: "Provide honest and trustworthy advice to customers regarding the best products that fit the customers' expectations."
-      }),
-      new Requirement({
-        Name: "Practice GOTTChA and assists with the installation of wipers blades, batteries, and light bulbs."
-      }),
-      new Requirement({
-        Name: "Utilize OBDII to read codes from customer's automobile."
-      }),
-      new Requirement({
-        Name: "Operate cash registers and follow established cash handling procedures."
-      }),
-      new Requirement({
-        Name: "Communicate with managers regarding customer concerns and employee matters."
-      }),
-      new Requirement({
-        Name: "Actively engaged in developing more effective customer service skills."
-      }),
+        Name: "Assist with shipping and receiving when needed by preparing incoming and outgoing shipments."
+      })
     ]
   }),
   new Job({
@@ -304,24 +271,42 @@ export const workExperience = [
     From: " June 2020",
     JobTitle: "Crewmate",
     Requirements: [
+      // new Requirement({
+      //   Name: "Assemble food orders while maintaining appropriate portion control."
+      // }),
+      // new Requirement({
+      //   Name: "Retrieves raw food stock and place at the appropriate station for preparation."
+      // }),
+      // new Requirement({
+      //   Name: "Performs duties to prepare food."
+      // }),
+      // new Requirement({
+      //   Name: "Operated fry station for drive-thru and dining room."
+      // }),
+      // new Requirement({
+      //   Name: "Cleaned & sanitized food preparation dishes, devices, and materials."
+      // }),
+      // new Requirement({
+      //   Name: "Performed closing procedures."
+      // }),
+    ]
+  }),
+  new Job({
+    Company: "Autozone",
+    Location: "Kuna ID",
+    To: "April 2nd, 2022",
+    From: "April 2021",
+    JobTitle: "Sales Associate",
+    Requirements: [
       new Requirement({
-        Name: "Assemble food orders while maintaining appropriate portion control."
+        Name: "Assist customers with finding, purchasing, and researching parts using Znet (Autozone part management software)."
       }),
       new Requirement({
-        Name: "Retrieves raw food stock and place at the appropriate station for preparation."
+        Name: "Manage store by stocking and organizing shelves, maintaining store tasks, and cleaning the storefront every day."
       }),
       new Requirement({
-        Name: "Performs duties to prepare food."
-      }),
-      new Requirement({
-        Name: "Operated fry station for drive-thru and dining room."
-      }),
-      new Requirement({
-        Name: "Cleaned & sanitized food preparation dishes, devices, and materials."
-      }),
-      new Requirement({
-        Name: "Performed closing procedures."
-      }),
+        Name: "Go to the customer's vehicle to assist with OBD II codes and replacing wiper blades, batteries, or headlights."
+      })
     ]
   }),
   new Job({
@@ -331,27 +316,73 @@ export const workExperience = [
     From: "June 2020",
     JobTitle: "Sandwich Artist",
     Requirements: [
-      new Requirement({
-        Name: "Created custom sandwiches as ordered."
-      }),
-      new Requirement({
-        Name: "Maintained excellent customer service during fast-paced lunch and dinner rushes."
-      }),
-      new Requirement({
-        Name: "Cleaned, sanitized, and organized dining room area to maintain a comfortable and clean environment."
-      }),
-      new Requirement({
-        Name: "Processed customer payments via POS register, including accurate cash handling and credit card transactions."
-      }),
-      new Requirement({
-        Name: "Cleaned & sanitized food preparation dishes, devices, and materials."
-      }),
-      new Requirement({
-        Name: "Prepared food & materials to be used for sandwich creations."
-      }),
-      new Requirement({
-        Name: "Performed closing procedures."
-      }),
+      // new Requirement({
+      //   Name: "Created custom sandwiches as ordered."
+      // }),
+      // new Requirement({
+      //   Name: "Maintained excellent customer service during fast-paced lunch and dinner rushes."
+      // }),
+      // new Requirement({
+      //   Name: "Cleaned, sanitized, and organized dining room area to maintain a comfortable and clean environment."
+      // }),
+      // new Requirement({
+      //   Name: "Processed customer payments via POS register, including accurate cash handling and credit card transactions."
+      // }),
+      // new Requirement({
+      //   Name: "Cleaned & sanitized food preparation dishes, devices, and materials."
+      // }),
+      // new Requirement({
+      //   Name: "Prepared food & materials to be used for sandwich creations."
+      // }),
+      // new Requirement({
+      //   Name: "Performed closing procedures."
+      // }),
     ]
+  }),
+]
+
+export const schools = [
+  new School({
+    Name: "Kuna High School",
+    Class: "2021",
+    Picture: "https://imgs.search.brave.com/p8t3pILNoZkEJIIrXhbgBdoVzLvihPsAgSmzQrGT5q4/rs:fit:1200:796:1/g:ce/aHR0cHM6Ly9ibG94/aW1hZ2VzLmNoaWNh/Z28yLnZpcC50b3du/bmV3cy5jb20vaWRh/aG9wcmVzcy5jb20v/Y29udGVudC90bmNt/cy9hc3NldHMvdjMv/ZWRpdG9yaWFsLzEv/ZjIvMWYyNDJjZTkt/YjE3NS01ZWQ1LWE1/NTItOGNkNzY1OTgy/ZTk0LzVmNTk3MDA2/YTAxYjAuaW1hZ2Uu/anBnP3Jlc2l6ZT0x/MjAwJTJDNzk2",
+    Location: "Kuna, Idaho",
+    Link: "https://www.kunaschools.org/kunahigh",
+    Description: "Learned wide variety of topics covering the basics of required topics needed in a work environment."
+  }),
+  new School({
+    Name: "Boise CodeWorks",
+    Class: "Fall 2022",
+    Picture: "https://imgs.search.brave.com/oB5oWKQwWj01VwxskKVLBFJikYcgl4f3zAIapNGQxfY/rs:fit:500:500:1/g:ce/aHR0cHM6Ly9pZGFo/b3BvdGF0b2Ryb3Au/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE2LzA5L2N3LWxv/Z28ucG5n",
+    Location: "Boise, Idaho",
+    Link: "https://boisecodeworks.com/",
+    Description: "Primarily learned full stack web development including front-end (client) and back-end (server / database)"
+  })
+]
+
+export const achievements = [
+  new Achievement({
+    Name: "Adobe Certified Associate - Adobe Photoshop CC 2018",
+    Date: "Dec 2018 - Nov-2022"
+  }),
+  new Achievement({
+    Name: "Graphic Design & Illustration using Adobe Illustrator CC 2018",
+    Date: "Nov 2020 - Nov 2023"
+  }),
+  new Achievement({
+    Name: "Print & Digital Media Publication using Adobe InDesign CC 2018",
+    Date: "May 2021 - May 2024"
+  }),
+  new Achievement({
+    Name: "Adobe Certified Professional: Visual Design",
+    Date: "2021"
+  }),
+  new Achievement({
+    Name: "Introduction to Programming using Java",
+    Date: "May 2021"
+  }),
+  new Achievement({
+    Name: "Certificate of Completion - Boise CodeWorks",
+    Date: "Nov 2022"
   }),
 ]
