@@ -181,6 +181,7 @@ export function toggleShowSkills2() {
     drawSkills(skills)
     unDrawJobs()
     unDrawSchools()
+    unDrawAchievements()
   } else {
     unDrawSkills()
   }
