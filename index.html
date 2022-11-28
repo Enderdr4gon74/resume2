@@ -76,6 +76,14 @@
     </section>
     <!-- more -->
     <section class="row bg-light pb-3">
+      <!-- All Button -->
+      <div class="col-12">
+        <button
+          class="btn btn-outline-dark border-0 m-2 rounded-3 py-2 px-3 dropdown-toggle d-flex align-items-center gap-2"
+          onclick="toggleShowAll()">
+          <h2 class="m-0">All</h2>
+        </button>
+      </div>
       <!-- Skills -->
       <div class="col-12">
         <button
@@ -139,11 +147,13 @@
     import { toggleShowJobs } from "./JS/Handler.js"
     import { toggleShowSchools } from "./JS/Handler.js"
     import { toggleShowAchievements } from "./JS/Handler.js"
+    import { toggleShowAll } from "./JS/Handler.js"
 
     window.toggleShowSkills = toggleShowSkills;
     window.toggleShowJobs = toggleShowJobs;
     window.toggleShowSchools = toggleShowSchools;
     window.toggleShowAchievements = toggleShowAchievements;
+    window.toggleShowAll = toggleShowAll;
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

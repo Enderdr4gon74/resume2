@@ -219,3 +219,17 @@ export function toggleShowAchievements2() {
     unDrawAchievements()
   }
 }
+
+export function toggleShowAll2() {
+  if (!showAchievements || !showJobs || !showSchools || !showSkills) {
+    drawAchievements(achievements)
+    drawJobExperience(workExperience)
+    drawSchools(schools)
+    drawSkills(skills)
+  } else {
+    unDrawAchievements()
+    unDrawJobs()
+    unDrawSchools()
+    unDrawSkills()
+  }
+}
