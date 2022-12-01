@@ -48,7 +48,7 @@
           <div class="col-12 col-md-4 d-flex align-items-center">
             <img src="./assets/Img/Profile_Pic.jpg" alt="" class="img-fluid w-100 profile_pic">
           </div>
-          <div class="col-12 col-md-8 font-accent">
+          <div class="col-12 col-md-10 font-accent">
             <section class="row">
               <div class="col-12 mb-1">
                 <div class="d-flex justify-content-between align-items-center">
@@ -77,16 +77,16 @@
         </section>
       </div>
     </section>
-    <!-- more -->
+    <!-- skills, job experience, school, etc. -->
     <section class="row bg-light pb-3">
       <!-- All Button -->
-      <div class="col-12">
+      <!-- <div class="col-12">
         <button
           class="btn btn-outline-dark border-0 m-2 rounded-3 py-2 px-3 dropdown-toggle d-flex align-items-center gap-2"
           onclick="toggleShowAll()">
           <h2 class="m-0">All</h2>
         </button>
-      </div>
+      </div> -->
       <!-- Skills -->
       <div class="col-12">
         <button
@@ -134,6 +134,35 @@
         </section>
       </div>
     </section>
+    <!-- portfolio -->
+    <section class="row">
+      <div class="col-12 p-3">
+        <h2>Portfolio</h2>
+        <section class="row">
+          <div class="col-12">
+            <section class="row justify-content-center">
+              <div class="col-12">
+                <section class="row">
+                  <div class="col-9">
+                    <h3>Site Clone</h3>
+                    <p>Languages: HTML CSS</p>
+                  </div>
+                  <div class="col-3 d-flex justify-content-end align-items-start">
+                    <h4 class="m-0 fs-spec" title="Project Link"><a href="https://github.com/Enderdr4gon74/siteCloneRedo2"
+                      target="_blank"><i class="mdi mdi-github text-dark"></i></a></h4>
+                  </div>
+                </section>
+                <p>This project allowed me to show my proficiency with HTML and CSS by perfectly designing a static web page that is modeled exactly after the Figma provided.</p>
+              </div>
+              <div class="col-11">
+                <img src="./assets/Img/SiteClone1.jpg" alt="SiteClone1" class="img-fluid w-100">
+                <img src="./assets/Img/SiteClone2.jpg" alt="SiteClone2" class="img-fluid w-100">
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>
   </main>
   <div class="d-flex justify-content-end align-items-center position-absolute bottom-0 end-0">
     <div class="pb-2 pe-2">
@@ -150,13 +179,13 @@
     import { toggleShowJobs } from "./JS/Handler.js"
     import { toggleShowSchools } from "./JS/Handler.js"
     import { toggleShowAchievements } from "./JS/Handler.js"
-    import { toggleShowAll } from "./JS/Handler.js"
+    // import { toggleShowAll } from "./JS/Handler.js"
 
     window.toggleShowSkills = toggleShowSkills;
     window.toggleShowJobs = toggleShowJobs;
     window.toggleShowSchools = toggleShowSchools;
     window.toggleShowAchievements = toggleShowAchievements;
-    window.toggleShowAll = toggleShowAll;
+    // window.toggleShowAll = toggleShowAll;
   </script>
 
   <script src="./JS/Runner.js"></script>
