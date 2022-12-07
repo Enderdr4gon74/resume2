@@ -4,6 +4,6 @@ export class Skill {
   constructor(data) {
     this.Name = data.Name
     this.Description = data.Description
-    this.Icons = data.Icons.map(i => new Icon(i))
+    this.Icons = new Icon(data.Icons[0])
   }
 }

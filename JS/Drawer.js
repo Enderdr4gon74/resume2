@@ -71,32 +71,50 @@ function unDrawAchievements() {
 }
 
 function formatSkill(s) {
-  let skill = new Skill(s)
-  let html = 
-    `<div class="brick py-2 px-1">\n` + 
-    `\t<div class="spec-card-2 p-2">\n` + 
-    `\t\t<h3 class="m-0">${skill.Name}</h3>\n` + 
-    `\t\t<p class="ps-1 mb-1">${skill.Description}</p>\n`
-  if (skill.Icons.length > 0) {
-    html += `\t\t<section class="row">\n`
-    skill.Icons.forEach((ic)=>{
-      let icon = new Icon(ic)
-      html += `\t\t\t<div class="col-6 col-md-3">\n`
-      if (icon.Link) {
-        html +=
-        `\t\t\t\t<a href="${icon.Link}" class="w-100">\n` + 
-        `\t\t\t\t\t<img src="${icon.Img}" alt="${icon.Title}" title="${icon.Title}" class="img-fluid w-100  rounded-3">\n` + 
-        `\t\t\t\t</a>\n`
-      } else {
-        html += `\t\t\t\t<img src="${icon.Img}" alt="${icon.Title}" title="${icon.Title}" class="img-fluid w-100  rounded-3">\n`
-      }
-      html +=`\t\t\t</div>\n` 
-    })
-    html += `\t\t</section>\n` 
+  let skill = s;
+  // let skill = new Skill(s)
+  // skill.Icons.map((/** @type {Icon} */ i) => new Icon(i))
+  let html =  /*html*/ `
+  <div class="col-6 col-md-4 col-lg-2 p-2">
+  `
+  if (skill.Icons.Link) {
+    html += /*html*/`
+    <a href="${skill.Icons.Link}" target="_blank">
+      <img src="${skill.Icons.Img}" alt="${skill.Icons.Title}" title="${skill.Icons.Title}" class="img-fluid w-100">
+    </a>`
+  } else {
+    html += /*html*/`
+    <img src="${skill.Icons.Img}" alt="${skill.Icons.Title}" title="${skill.Icons.Title}" class="img-fluid w-100">
+    `
   }
-  html += 
-    `\t</div>\n` + 
-    `</div>\n`
+  html += /*html*/`
+  </div>
+  `
+  // let html = 
+  //   `<div class="brick py-2 px-1">\n` + 
+  //   `\t<div class="spec-card-2 p-2">\n` + 
+  //   `\t\t<h3 class="m-0">${skill.Name}</h3>\n` + 
+  //   `\t\t<p class="ps-1 mb-1">${skill.Description}</p>\n`
+  // if (skill.Icons.length > 0) {
+  //   html += `\t\t<section class="row">\n`
+  //   skill.Icons.forEach((ic)=>{
+  //     let icon = new Icon(ic)
+  //     html += `\t\t\t<div class="col-6 col-md-3">\n`
+  //     if (icon.Link) {
+  //       html +=
+  //       `\t\t\t\t<a href="${icon.Link}" class="w-100">\n` + 
+  //       `\t\t\t\t\t<img src="${icon.Img}" alt="${icon.Title}" title="${icon.Title}" class="img-fluid w-100  rounded-3">\n` + 
+  //       `\t\t\t\t</a>\n`
+  //     } else {
+  //       html += `\t\t\t\t<img src="${icon.Img}" alt="${icon.Title}" title="${icon.Title}" class="img-fluid w-100  rounded-3">\n`
+  //     }
+  //     html +=`\t\t\t</div>\n` 
+  //   })
+  //   html += `\t\t</section>\n` 
+  // }
+  // html += 
+  //   `\t</div>\n` + 
+  //   `</div>\n`
   return html
 }
 
@@ -179,7 +197,7 @@ function formatAchievement(a) {
 export function toggleShowSkills2() {
   if (!showSkills) {
     drawSkills(skills)
-    unDrawJobs()
+    // unDrawJobs()
     unDrawSchools()
     unDrawAchievements()
   } else {
@@ -188,20 +206,20 @@ export function toggleShowSkills2() {
 }
 
 export function toggleShowJobs2() {
-  if (!showJobs) {
-    drawJobExperience(workExperience)
-    unDrawSkills()
-    unDrawSchools()
-    unDrawAchievements()
-  } else {
-    unDrawJobs()
-  }
+  // if (!showJobs) {
+  //   drawJobExperience(workExperience)
+  //   unDrawSkills()
+  //   unDrawSchools()
+  //   unDrawAchievements()
+  // } else {
+  //   unDrawJobs()
+  // }
 }
 
 export function toggleShowSchools2() {
   if (!showSchools) {
     drawSchools(schools)
-    unDrawJobs()
+    // unDrawJobs()
     unDrawSkills()
     unDrawAchievements()
   } else {
@@ -212,7 +230,7 @@ export function toggleShowSchools2() {
 export function toggleShowAchievements2() {
   if (!showAchievements) {
     drawAchievements(achievements)
-    unDrawJobs()
+    // unDrawJobs()
     unDrawSchools()
     unDrawSkills()
   } else {
@@ -223,12 +241,12 @@ export function toggleShowAchievements2() {
 export function toggleShowAll2() {
   if (!showAchievements || !showJobs || !showSchools || !showSkills) {
     drawAchievements(achievements)
-    drawJobExperience(workExperience)
+    // drawJobExperience(workExperience)
     drawSchools(schools)
     drawSkills(skills)
   } else {
     unDrawAchievements()
-    unDrawJobs()
+    // unDrawJobs()
     unDrawSchools()
     unDrawSkills()
   }
